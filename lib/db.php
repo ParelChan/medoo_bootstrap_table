@@ -4,7 +4,7 @@ require_once 'medoo.php';
 $database = new medoo ( [
 		'database_type' => 'mysql',
 		'database_name' => 'u',
-		'server' => 'localhost',
+		'server' => '127.0.0.1',
 		'username' => 'root',
 		'password' => 'root',
 		'charset' => 'utf8'

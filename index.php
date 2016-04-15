@@ -93,12 +93,12 @@
 						}
 					} ]
 				};
-				// 为echarts对象加载数据 
+				// 为echarts对象加载数据
 
 
 				myChart.setOption(option);
-				
-				
+
+
 				var myChart2 = echarts.init(document
 						.getElementById('echarts_test2'));
 				var option2 = {
@@ -155,7 +155,7 @@
 						}
 					} ]
 				};
-				// 为echarts对象加载数据 
+				// 为echarts对象加载数据
 
 
 				myChart2.setOption(option2);
@@ -278,25 +278,13 @@
 			window.location.href = "export";
 		}
 	}
-	
+
 	function dateFormatter(value, row, index) {
 		return moment.unix(value).format("YYYY-MM-DD hh:mm:ss a");
 	}
 </script>
 </head>
 <body>
-	<?php
-		require_once'lib/db.php';
-		//插入数据测试
-		$database->insert ( 'user_php', [
-				'name' => 'foo',
-				'age' => 25,
-				'adddate' => time (),
-				'deliveryaddress' => "shouhuodizhi",
-				'phone' => "13823832312",
-				'sex' => "nan" 
-		]);
-	?>
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -380,7 +368,7 @@
 			<span class="glyphicon glyphicon-arrow-down"></span> 导出历史数据到excel
 		</button>
 		<table id="dtb" data-toggle="table"
-			data-url="user/userlist?format=json" class="table table-hover"
+			data-url="userlist.php" class="table table-hover"
 			data-show-columns="true" data-search="true" data-show-refresh="true"
 			data-show-toggle="true" data-show-export="true"
 			data-export-types="['json', 'xml', 'csv', 'txt', 'sql', 'excel']"
