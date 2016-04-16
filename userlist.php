@@ -1,6 +1,7 @@
 <?php
 header('Content-type: text/json');
 require_once 'lib/db.php';
+// print_r($database->info());
 // 插入数据测试
 // $database->insert ( 'user', [
 // 		'name' => 'foo',
@@ -15,6 +16,10 @@ require_once 'lib/db.php';
 // 		"limit"=>$_GET["limit"],
 // 		"offset"=>$_GET["offset"]
 // ]);
-$datas = $database->select("user","*");
-$result=array("total"=>"10","rows"=>$datas);
+// 调试打印sql
+// $datas = $database->debug()->select("user","*",["LIMIT" => [$_GET["offset"],$_GET["limit"]]]);
+// $total=$database->debug()->count("user");
+$datas = $database->select("user","*",["LIMIT" => [$_GET["offset"],$_GET["limit"]]]);
+$total=$database->count("user");
+$result=array("total"=>$total,"rows"=>$datas);
 echo  json_encode($result);
