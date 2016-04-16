@@ -2,4 +2,4 @@
 ## 技术栈
 * bootstrap3
 * bootstrap-table1.9
-* medoo
+* medoo 1.0.2
