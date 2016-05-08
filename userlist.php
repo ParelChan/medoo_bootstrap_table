@@ -19,7 +19,13 @@ require_once 'lib/db.php';
 // 调试打印sql
 // $datas = $database->debug()->select("user","*",["LIMIT" => [$_GET["offset"],$_GET["limit"]]]);
 // $total=$database->debug()->count("user");
-$datas = $database->select("user","*",["LIMIT" => [$_GET["offset"],$_GET["limit"]]]);
+// var_dump($_GET["search"]);
+if(!empty($_GET["search"])){
+	$datas = $database->select("user","*",["name[~]"=>$_GET["search"],"LIMIT" => [$_GET["offset"],$_GET["limit"]]]);
+}else{
+	$datas = $database->select("user","*",["LIMIT" => [$_GET["offset"],$_GET["limit"]]]);
+}
+
 $total=$database->count("user");
 $result=array("total"=>$total,"rows"=>$datas);
 echo  json_encode($result);
