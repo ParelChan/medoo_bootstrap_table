@@ -29,7 +29,7 @@
 <script src="js/moment.zh-cn.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$.getJSON('newdata.json', function(data) {
+		$.getJSON('data.php',{"a":"newdata"},function(data) {
 			$("#xinzeng").text(data.newcount);
 			$("#xinzeng").tooltip({
 				"title" : "今日新增数据，点击查看",
@@ -37,7 +37,7 @@
 			});
 			$("#xinzeng").mouseover();
 			$("#login_username").text(data.username);
-			$.getJSON('datacount', function(data) {
+			$.getJSON('data.php', {"a":"datasum"},function(data) {
 				var myChart = echarts.init(document
 						.getElementById('echarts_test'));
 				var option = {
