@@ -1,3 +1,6 @@
+<?php 
+	defined('IN_SYS')
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -265,7 +268,7 @@
 
 	function sys_Exit() {
 		if (confirm("确定退出系统吗")) {
-			window.location.href = "exit";
+			window.location.href = "route.php?a=exit";
 		}
 	}
 	function exporyToday() {
