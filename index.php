@@ -1,5 +1,6 @@
 <?php 
-	defined('IN_SYS')
+	session_start();
+	$_SESSION["username"]="user";
 ?>
 <!DOCTYPE html>
 <html>
