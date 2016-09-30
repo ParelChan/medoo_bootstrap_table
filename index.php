@@ -35,7 +35,7 @@
 <script src="js/moment.zh-cn.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$.getJSON('data.php',{"a":"newdata"},function(data) {
+		$.getJSON("route.php?a=data",{"act":"newdata"},function(data) {
 			$("#xinzeng").text(data.newcount);
 			$("#xinzeng").tooltip({
 				"title" : "今日新增数据，点击查看",
@@ -43,7 +43,7 @@
 			});
 			$("#xinzeng").mouseover();
 			$("#login_username").text(data.username);
-			$.getJSON('data.php', {"a":"datasum"},function(data) {
+			$.getJSON('route.php?a=data', {"act":"datasum"},function(data) {
 				var myChart = echarts.init(document
 						.getElementById('echarts_test'));
 				var option = {
@@ -374,7 +374,7 @@
 			<span class="glyphicon glyphicon-arrow-down"></span> 导出历史数据到excel
 		</button>
 		<table id="dtb" data-toggle="table"
-			data-url="userlist.php" class="table table-hover"
+			data-url="route.php?a=userlist" class="table table-hover"
 			data-show-columns="true" data-search="true" data-show-refresh="true"
 			data-show-toggle="true" data-show-export="true"
 			data-export-types="['json', 'xml', 'csv', 'txt', 'sql', 'excel']"

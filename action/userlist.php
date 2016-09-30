@@ -1,6 +1,8 @@
 <?php
+if(!defined('IN_SYS')) {
+	exit('deny');
+}
 header('Content-type: text/json');
-require_once 'lib/db.php';
 // print_r($database->info());
 // 插入数据测试
 // $database->insert ( 'user', [
@@ -25,7 +27,7 @@ if(!empty($_GET["search"])){
 }else{
 	$datas = $database->select("user","*",["LIMIT" => [$_GET["offset"],$_GET["limit"]]]);
 }
-
 $total=$database->count("user");
 $result=array("total"=>$total,"rows"=>$datas);
+$log->debug("获取用户列表,条数:".$total);
 echo  json_encode($result);
