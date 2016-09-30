@@ -1,6 +1,8 @@
-<?php 
+<?php
 	session_start();
-	$_SESSION["username"]="user";
+	if(!isset($_SESSION["username"])){
+		header("location: http://".$_SERVER["SERVER_NAME"]."/medoo_bootstrap_table/login.php");
+	}
 ?>
 <!DOCTYPE html>
 <html>

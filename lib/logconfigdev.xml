@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- pattern:http://logging.apache.org/log4php/docs/layouts/pattern.html -->
+<configuration xmlns="http://logging.apache.org/log4php/">
+	<appender name="myConsoleAppender" class="LoggerAppenderConsole" />
+	<appender name="myFileAppender" class="LoggerAppenderFile">
+		<layout class="LoggerLayoutPattern">
+			<param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %level [%logger] %l %sessionid %message %newline" />
+		</layout>
+		<param name="file" value="myLog.log" />
+	</appender>
+	<logger name="log">
+		<appender_ref ref="myFileAppender" />
+	</logger>
+	<root>
+		<level value="DEBUG" />
+		<appender_ref ref="myConsoleAppender" />
+	</root>
+</configuration>
