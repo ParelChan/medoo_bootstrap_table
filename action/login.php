@@ -20,9 +20,15 @@ if(!isset($username)||empty($username)||!isset($password)||empty($password)){
 	}else {
 		if(is_array($user)){
 			if(count($user)==1){
-				$log->debug($username."->登录成功");
-				$_SESSION["username"]=$username;
-				$result=array("success"=>true,"msg"=>json_encode($user[0]));
+				$dbpwd=$user[0]["password"];
+				$dbsalt=$user[0]["salt"];
+				$calpwd=md5($dbsalt.$password);
+				$log->debug("计算用户password:".$calpwd.",数据库pwd:".$dbpwd);
+				if($calpwd==$dbpwd){
+					$log->debug($username."->登录成功");
+					$_SESSION["username"]=$username;
+					$result=array("success"=>true,"msg"=>json_encode($user[0]));
+				}
 				exit(json_encode($result));
 			}elseif (count($user)>1){
 				$result=array("success"=>false,"msg"=>"find many");

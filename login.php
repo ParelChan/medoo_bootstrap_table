@@ -110,13 +110,13 @@
 									<div class="form-group">
 										<label class="sr-only" for="form-username">用户名</label> <input
 											name="username" placeholder="Username..."
-											class="form-username form-control input-error validate[required,custom[onlyLetterNumber],minSize[3]]"
+											class="form-username form-control input-error validate[required,custom[onlyLetterNumber],minSize[1]]"
 											id="form-username" type="text">
 									</div>
 									<div class="form-group">
 										<label class="sr-only" for="form-password">密码</label> <input
 											name="password" placeholder="Password..."
-											class="form-password form-control input-error validate[required,minSize[6]]"
+											class="form-password form-control input-error validate[required,minSize[1]]"
 											id="form-password" type="password">
 									</div>
 									<input name="requri" type="hidden" value=""/>
