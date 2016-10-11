@@ -1,4 +1,5 @@
 <?php
+#路由action
 require_once 'lib/class.action.php';
 define('IN_SYS', true);
 define('PROJECT_NAME', "medoo_bootstrap_table");

@@ -291,6 +291,7 @@
 </script>
 </head>
 <body>
+	<img src="route.php?a=qrcode&param=test&size=10" style="position:fixed;bottom:0;left: 0; z-index:99999 ; width:100px;height:100px;" alt="..."> 
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
