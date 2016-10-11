@@ -11,7 +11,7 @@ require_once 'lib/db.php';
 // $logger = Logger::getLogger("main");
 // $logger->info("This is an informational message.<br/>");
 // $logger->warn("I'm not feeling so good...<br/>");
-Logger::configure('lib/logconfigdev.xml');
+Logger::configure('lib/logconfigdaily.xml');
 $log = Logger::getLogger('log');
 // Start logging
 // $log->trace("My first message.");   // Not logged because TRACE < WARN
