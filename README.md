@@ -5,6 +5,7 @@
 * medoo 1.0.2
 * [log4php](http://logging.apache.org/log4php/install.html)
 * [phpqrcode](http://phpqrcode.sourceforge.net/index.php#demo)
+* [PHPExcel](https://github.com/PHPOffice/PHPExcel/)
 
 ---
 > php medoo数据库操作测试,需要php>=5.4

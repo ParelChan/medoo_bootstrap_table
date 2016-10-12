@@ -279,9 +279,9 @@
 			window.location.href = "user/export";
 		}
 	}
-	function exporyAll() {
+	function exportAll() {
 		if (confirm("确定导出所有记录吗？")) {
-			window.location.href = "export";
+			window.location.href = "route.php?a=export&e=user";
 		}
 	}
 
@@ -371,7 +371,7 @@
 			</div>
 
 		</div> -->
-		<button type="button" class="btn btn-default" onclick="exporyAll();">
+		<button type="button" class="btn btn-default" onclick="exportAll();">
 			<span class="glyphicon glyphicon-arrow-down"></span> 导出历史数据到excel
 		</button>
 		<table id="dtb" data-toggle="table"
