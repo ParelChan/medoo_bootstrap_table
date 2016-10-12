@@ -2,6 +2,7 @@
 if(!defined('IN_SYS')) {
 	exit('deny');
 }
+# https://github.com/PHPOffice/PHPExcel/wiki/User%20Documentation
 require_once 'lib/PHPExcel/PHPExcel.php';
 require_once 'lib/class.util.php';
 $log->debug("导出到excel");
