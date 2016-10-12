@@ -36,6 +36,7 @@ if($e==="test"){
 	$objWriter = new PHPExcel_Writer_Excel2007($xls);
 	$objWriter->save("demo.xlsx");
 }else if($e==="user"){
+	$log->debug("导出用户数据列表");
 	$xls->getProperties()->setCreator("netbuffer");
 	$xls->getProperties()->setLastModifiedBy("netbuffer");
 	$xls->getProperties()->setTitle("用户数据导出");
@@ -44,6 +45,13 @@ if($e==="test"){
 	$xls->getProperties()->setKeywords("用户 数据 medoo 导出");
 	$xls->getProperties()->setCategory("用户");
 	$xls->setActiveSheetIndex(0);
+// 	$xls->getActiveSheet()->getColumnDimension()->setAutoSize(true);
+// 	$xls->getActiveSheet()->getColumnDimension("B")->setAutoSize(true);
+// 	$xls->getActiveSheet()->getColumnDimension("C")->setAutoSize(true);
+// 	$xls->getActiveSheet()->getColumnDimension("D")->setAutoSize(true);
+// 	$xls->getActiveSheet()->getColumnDimension("E")->setAutoSize(true);
+// 	$xls->getActiveSheet()->getColumnDimension("F")->setAutoSize(true);
+// 	$xls->getActiveSheet()->getColumnDimension("G")->setAutoSize(true);
 	$xls->getActiveSheet()->setCellValue('A1', '用户ID');
 	$xls->getActiveSheet()->setCellValue('B1', '姓名');
 	$xls->getActiveSheet()->setCellValue('C1', '性别');
@@ -54,20 +62,23 @@ if($e==="test"){
 	$datas = $database->select("user","*");
 	$d_length=count($datas);
 	for($i=0;$i<$d_length;$i++){
-		$xls->getActiveSheet()->setCellValue('A'.($i+1), $datas[$i]["id"]);
-		$xls->getActiveSheet()->setCellValue('B'.($i+1), $datas[$i]["name"]);
-		$xls->getActiveSheet()->setCellValue('C'.($i+1), $datas[$i]["sex"]);
-		$xls->getActiveSheet()->setCellValue('D'.($i+1), $datas[$i]["age"]);
-		$xls->getActiveSheet()->setCellValue('E'.($i+1), $datas[$i]["phone"]);
-		$xls->getActiveSheet()->setCellValue('F'.($i+1), $datas[$i]["phone"]);
-		$xls->getActiveSheet()->setCellValue('G'.($i+1), $datas[$i]["phone"]);
+		$xls->getActiveSheet()->setCellValue('A'.($i+2), $datas[$i]["id"]);
+		$xls->getActiveSheet()->setCellValue('B'.($i+2), $datas[$i]["name"]);
+		$xls->getActiveSheet()->setCellValue('C'.($i+2), $datas[$i]["sex"]);
+		$xls->getActiveSheet()->setCellValue('D'.($i+2), $datas[$i]["age"]);
+		$xls->getActiveSheet()->setCellValue('E'.($i+2), $datas[$i]["phone"]);
+		$xls->getActiveSheet()->setCellValue('F'.($i+2), $datas[$i]["deliveryaddress"]);
+		$xls->getActiveSheet()->setCellValue('G'.($i+2), $datas[$i]["adddate"]);
+		$xls->getActiveSheet()->getStyle('G'.($i+2))->getNumberFormat()->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_DATE_YYYYMMDDSLASH);
 	}
 }
+ob_end_clean();//清除缓冲区,避免乱码http://www.cnblogs.com/freespider/p/3332550.html
 header("Content-Type:application/vnd.ms-excel");
 header("Content-Disposition:attachment;filename=t.xlsx");
 header("Pragma:no-cache");
 header("Expires:0");
-$log->debug("导出到内存消耗:".(memory_get_peak_usage(true)/1024/1024)."mb");
+// $log->debug("导出xls:".var_export($xls,true));
 $objWriter = new PHPExcel_Writer_Excel5($xls);
 $objWriter->save("php://output");
+$log->debug("导出到内存消耗:".(memory_get_peak_usage(true)/1024/1024)."mb");
 // unset($xls);
