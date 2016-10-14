@@ -27,6 +27,8 @@ if(!isset($username)||empty($username)||!isset($password)||empty($password)){
 				if($calpwd==$dbpwd){
 					$log->debug($username."->登录成功");
 					$_SESSION["username"]=$username;
+					setcookie("username",$username);
+					$log->debug("登录用户放入cookie:".$_COOKIE["username"]);
 					$result=array("success"=>true,"msg"=>json_encode($user[0]));
 				}
 				exit(json_encode($result));
