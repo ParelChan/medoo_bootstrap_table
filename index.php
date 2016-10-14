@@ -292,7 +292,7 @@
 </head>
 <body>
 	<img src="route.php?a=qrcode&param=test&size=10" style="position:fixed;bottom:0;left: 0; z-index:99999 ; width:100px;height:100px;" alt="..."> 
-	<nav class="navbar navbar-inverse" role="navigation">
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -301,23 +301,30 @@
 					<span class="sr-only"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"></a>
+				<a class="navbar-brand" href="#">后台管理</a>
 			</div>
 
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<p class="navbar-text">后台管理</p>
+					<li class=""><a href="#">Demo</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<p class="navbar-text">
-						<span class="glyphicon glyphicon-user"></span> 欢迎您：<span
-							id="login_username"></span>
-					</p>
-					<p class="navbar-text">
-						今日共新增<span class="badge" id="xinzeng" style="cursor: pointer;"
-							onclick="checkToday();">0</span>条数据
-					</p>
+					<li class="visible-xs-block">
+						<a href="#">欢迎您：<span id="login_username"></span></a>
+					</li>
+					<li class="hidden-xs">
+						<p class="navbar-text">
+							<span class="glyphicon glyphicon-user"></span> 欢迎您：<span
+								id="login_username"></span>
+						</p>
+					</li>
+					<li class="hidden-xs">
+						<p class="navbar-text">
+							今日共新增<span class="badge" id="xinzeng" style="cursor: pointer;"
+								onclick="checkToday();">0</span>条数据
+						</p>
+					</li>
 					<li><a href="#" id="sys_exit" onclick="sys_Exit();"><span
 							class="glyphicon glyphicon-off"></span>退出系统</a></li>
 				</ul>
