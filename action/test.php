@@ -100,3 +100,6 @@ foreach ( $list as $key => $val ) {
 	echo "nick2:".$val["nick"]."<br/>";
 }
 echo "<br/>list:".var_export($list,true)."<br/>";
+echo("<br/>日期:".date("Y-m-d H:i:s",time()));
+$test="test^^^^^^";
+echo "<br/>var_export(\$test):".var_export($test,true);
