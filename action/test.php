@@ -35,7 +35,7 @@ echo "<br/>c(123)->" . c ( 123 );
 $age = array (
 		"Bill" => "35",
 		"Steve" => "37",
-		"Peter" => "43" 
+		"Peter" => "43"
 );
 foreach ( $age as $x => $x_value ) {
 	echo "Key=" . $x . ", Value=" . $x_value;
@@ -94,10 +94,12 @@ function strreplacemask($string, $mask) {
 }
 $list=array(0=>array("nick"=>"test"),1=>array("nick"=>"test2"),2=>array("nick"=>"test3"),3=>array("nick"=>"test4"));
 foreach ( $list as $key => $val ) {
-	echo "nick1:".$val["nick"]."<br/>";
-	$val["nick"]="n";
+	echo "<br/>nick1:".$val["nick"]."<br/>";
+	#这样赋值不会改变原数组的
+	$val["nick"]="n1";
+	#重新赋值
 	$list[$key]["nick"]="n";
-	echo "nick2:".$val["nick"]."<br/>";
+	echo "nick2:".$list[$key]["nick"]."<br/>";
 }
 echo "<br/>list:".var_export($list,true)."<br/>";
 echo("<br/>日期:".date("Y-m-d H:i:s",time()));
