@@ -5,6 +5,8 @@ if (! defined ( 'IN_SYS' )) {
 header("context-type:text/html;charset=UTF-8");
 require_once 'lib/class.util.php';
 echo "IN_SYS:" . IN_SYS;
+$index=0;
+echo "color0:".Util::$COLOR[$index];
 // 与变量不同，常量贯穿整个脚本是自动全局的。
 $a = 1;
 $b = 2;
