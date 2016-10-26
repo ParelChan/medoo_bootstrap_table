@@ -1,15 +1,11 @@
 <?php
 #路由action
 require_once 'lib/class.action.php';
+require_once 'lib/config.php';
 define('IN_SYS', true);
 define('PROJECT_NAME', "medoo_bootstrap_table");
 #异常输出
-define('DEBUG', true);
-if(DEBUG){
-	ini_set("display_errors", 1);
-}else{
-	ini_set("display_errors", 0);
-}
+ini_set("display_errors", $config["DEBUG"]);
 session_start();
 // include log service
 require_once 'lib/log4php/Logger.php';
