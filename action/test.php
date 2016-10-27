@@ -107,3 +107,5 @@ echo "<br/>list:".var_export($list,true)."<br/>";
 echo("<br/>日期:".date("Y-m-d H:i:s",time()));
 $test="test^^^^^^";
 echo "<br/>var_export(\$test):".var_export($test,true);
+$mobile="13111110000";
+echo "<br/>mobile:".substr($mobile,0,3)."****".substr($mobile,7,4);
