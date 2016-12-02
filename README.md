@@ -9,3 +9,6 @@
 
 ---
 > php medoo数据库操作测试,需要php>=5.4
+
+> ## github:[https://github.com/netbuffer/medoo_bootstrap_table](https://github.com/netbuffer/medoo_bootstrap_table)
+> ## git@osc:[http://git.oschina.net/gradle/medoo_bootstrap_table](http://git.oschina.net/gradle/medoo_bootstrap_table)
