@@ -42,7 +42,7 @@
 				"placement" : "bottom"
 			});
 			$("#xinzeng").mouseover();
-			$("#login_username").text(data.username);
+			$(".login_username").text(data.username);
 			$.getJSON('route.php?a=data', {"act":"datasum"},function(data) {
 				var myChart = echarts.init(document
 						.getElementById('echarts_test'));
@@ -291,7 +291,7 @@
 </script>
 </head>
 <body>
-	<img src="route.php?a=qrcode&param=test&size=10" style="position:fixed;bottom:0;left: 0; z-index:99999 ; width:100px;height:100px;" alt="..."> 
+	<img src="route.php?a=qrcode&param=test&size=10" style="position:fixed;bottom:0;left: 0; z-index:99999 ; width:100px;height:100px;" alt="...">
 	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -311,12 +311,12 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="visible-xs-block">
-						<a href="#">欢迎您：<span id="login_username"></span></a>
+						<a href="#">欢迎您：<span class="login_username"></span></a>
 					</li>
 					<li class="hidden-xs">
 						<p class="navbar-text">
 							<span class="glyphicon glyphicon-user"></span> 欢迎您：<span
-								id="login_username"></span>
+								class="login_username"></span>
 						</p>
 					</li>
 					<li class="hidden-xs">
