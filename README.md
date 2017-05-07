@@ -1,4 +1,4 @@
-#medoo_bootstrap_table demo
+# medoo_bootstrap_table demo
 ## 技术栈
 * bootstrap3
 * bootstrap-table1.9
