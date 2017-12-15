@@ -11,7 +11,7 @@
 > php medoo数据库操作测试,需要php>=5.4
 
 > ## github:[https://github.com/netbuffer/medoo_bootstrap_table](https://github.com/netbuffer/medoo_bootstrap_table)
-> ## git@osc:[http://git.oschina.net/gradle/medoo_bootstrap_table](http://git.oschina.net/gradle/medoo_bootstrap_table)
+> ## git@osc:[http://git.oschina.net/netbuffer/medoo_bootstrap_table](http://git.oschina.net/netbuffer/medoo_bootstrap_table)
 
 # other projects
 > `ssmbootstrap_table(spring+springmvc+mybatis)` github:[https://github.com/netbuffer/ssmbootstrap_table](https://github.com/netbuffer/ssmbootstrap_table)`/`git@osc:[https://git.oschina.net/gradle/ssmbootstrap_table](https://git.oschina.net/gradle/ssmbootstrap_table)    
