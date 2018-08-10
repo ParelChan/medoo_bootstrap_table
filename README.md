@@ -10,6 +10,9 @@
 ---
 > php medoo数据库操作测试,需要php>=5.4
 
+# 微信扫码使用gitee工具
+![gitee工具](https://s1.ax1x.com/2018/08/10/P60MMF.jpg)
+
 > ## github:[https://github.com/netbuffer/medoo_bootstrap_table](https://github.com/netbuffer/medoo_bootstrap_table)
 > ## git@osc:[http://gitee.com/netbuffer/medoo_bootstrap_table](http://gitee.com/netbuffer/medoo_bootstrap_table)
 
